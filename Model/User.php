@@ -3,7 +3,7 @@
 require_once 'Db.php';
 
 //admin login
-function ValidateLoginAdmin($Username, $Password)
+function ValidateLogin($Username, $Password)
 {
     $con = getConnection();
     $stmt = $con->prepare("SELECT * FROM admin WHERE Username = ? AND Password = ?");
@@ -22,9 +22,35 @@ function ValidateLoginAdmin($Username, $Password)
     }
 }
 
+function RegisterAdmin($username, $password, $email)
+{
+    $con = getConnection();
+
+    if (!$con) {
+        return false;
+    }
+
+    $stmt = $con->prepare("INSERT INTO admin (Username, Password, Email) VALUES (?, ?, ?)");
+
+    if (!$stmt) {
+        return false;
+    }
+
+    $stmt->bind_param("sss", $username, $password, $email);
+
+    $result = $stmt->execute();
+
+    if (!$result) {
+        return false;
+    }
+
+    return true;
+}
+
+
 
 //Forget Password - admin 
-function ForgetPasswordAdmin($Username, $Password)
+function ForgetPassword($Username, $Password)
 {
     $con = getConnection();
     $stmt = $con->prepare("UPDATE admin SET Password = ? WHERE Username = ?");
@@ -80,16 +106,4 @@ function deleteUser($id){
     $stmt->execute();
     return $stmt->affected_rows;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
