@@ -158,7 +158,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
         if($registrationStatus) {
             $_SESSION['successMessage'] = "Doctor registration successful!";
             
-            header('Location: ../Views/Admin/OnBoardDoctor.php');
+            header('Location: ../Views/Admin/Dashboard.php');
             exit();
         } 
         else {

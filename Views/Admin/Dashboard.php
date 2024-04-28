@@ -25,23 +25,24 @@ else{
     <style>
         body {
     font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    background-color: #f0f0f0; /* Changed background color to a lighter shade */
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 900px; /* Increased max-width for a wider container */
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Increased border-radius for a softer look */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adjusted box shadow for a subtle effect */
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Increased margin for more spacing */
+    color: #333; /* Added color to h1 for better readability */
 }
 
 .dashboard-links {
@@ -50,22 +51,23 @@ h1 {
 }
 
 .dashboard-links li {
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* Increased margin for more spacing between links */
 }
 
 .dashboard-links li a {
     display: block;
-    padding: 10px;
-    background-color: #4CAF50;
+    padding: 12px; /* Increased padding for larger clickable area */
+    background-color: #007bff; /* Changed link background color */
     color: #fff;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 6px; /* Slightly increased border-radius */
     transition: background-color 0.3s ease;
 }
 
 .dashboard-links li a:hover {
-    background-color: #45a049;
+    background-color: #0056b3; /* Darker hover color for contrast */
 }
+
 
     </style>
 </head>
@@ -74,7 +76,7 @@ h1 {
 <div class="container">
         <h1>Welcome to Dashboard, <?php echo $_SESSION['username'] ?></h1>
         <ul class="dashboard-links">
-            <li><a href="User.php">Application User</a></li>
+            
             <li><a href="Profile.php">Profile</a></li>
             <li><a href="ChangePassword.php">Change Password</a></li>
             <li><a href="OnBoardDoctor.php">Onboard Doctor</a></li>

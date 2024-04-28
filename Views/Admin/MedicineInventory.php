@@ -6,23 +6,92 @@ if(!isset($_SESSION['isAdmin'])){
 }
 
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicine Inventory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        form label, form input, form select, form textarea {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f2f2f2;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        table th, table td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 150px;
+        }
+
+        .action-links a {
+            margin-right: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Medicine Inventory</h1>
     
     <!-- Add New Medicine Form -->
-    <h2>Add New Medicine</h2>
     <form action="../../Controllers/AddMedicine.php" method="POST">
-        <label for="category">Category:</label>
+    <label for="category">Category:</label>
         <select id="category" name="category" >
         <option disabled="" selected="">--- SELECT ---</option>
             <option value="Fever">Fever</option>
@@ -86,7 +155,7 @@ if(!isset($_SESSION['isAdmin'])){
     
     <h2>All Medicine List</h2>
     <!-- Display Medicine Inventory Table with options to update and delete -->
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
@@ -137,9 +206,9 @@ if(!isset($_SESSION['isAdmin'])){
                 <td colspan="8">Not found.</td>
             </tr>
             <?php endif; ?>
-            
         </tbody>
     </table>
     
 </body>
 </html>
+

@@ -51,7 +51,7 @@ input[type="password"] {
 }
 
 .form-submit {
-    background-color: #4CAF50;
+    background-color: blue;
     color: #fff;
     border: none;
     padding: 12px 20px;

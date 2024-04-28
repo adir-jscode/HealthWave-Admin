@@ -50,7 +50,7 @@ body {
 }
 
 .form-submit {
-    background-color: #4CAF50;
+    background-color: #4c59af;
     color: #ffffff;
     border: none;
     padding: 12px 20px;
@@ -84,7 +84,7 @@ body {
 }
 
 .form-submit {
-    background-color: #4CAF50;
+    background-color: #514caf;
     color: #ffffff;
     border: none;
     padding: 12px 20px;
@@ -101,5 +101,5 @@ body {
 }
 
 .form-submit:hover {
-    background-color: #45a049;
+    background-color: #08084c;
 }

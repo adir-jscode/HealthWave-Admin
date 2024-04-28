@@ -106,4 +106,84 @@ function deleteUser($id){
     $stmt->execute();
     return $stmt->affected_rows;
 }
+
+
+//verify username & email already exists
+function VerifyUsername($Username)
+{
+    $con = getConnection();
+    $sql = "SELECT * FROM doctor WHERE Username = '$Username'";
+    $result = $con->query($sql);
+    if ($result->num_rows > 0) 
+    {
+        return true;
+    } 
+    else 
+    {
+        return false;
+    }
+}
+
+function VerifyEmail($Email)
+{
+    $con = getConnection();
+    $sql = "SELECT * FROM doctor WHERE Email = '$Email'";
+    $result = $con->query($sql);
+    if ($result->num_rows > 0) 
+    {
+        return true;
+    } 
+    else 
+    {
+        return false;
+    }
+}
+
+
+function RegisterDoctor($FullName,$Gender,$ContactNo,$Email,$Password,$Username,$Address,$Speciality,$Status)
+{
+    $con = getConnection();
+    
+    $sql = "INSERT INTO doctor (FullName,Gender,ContactNo,Email,Password,Username,Address,Speciality,Status) VALUES ('$FullName','$Gender','$ContactNo','$Email','$Password','$Username','$Address','$Speciality','$Status')";
+    
+    if ($con->query($sql) === TRUE) 
+    {
+        return true;
+    } 
+    else 
+    {
+        return false;
+    }
+}
+
+//getAllDoctors()
+function getAllDoctors()
+{
+    $con = getConnection();
+    $sql = "SELECT * FROM doctor";
+    $result = $con->query($sql);
+    return $result;
+}
+
+
+function addMedicine($category, $code, $medicineName, $manufacture, $unit, $description, $unitPrice, $sellPrice, $quantity, $sku, $expiryDate)
+{
+    $con = getConnection();
+    $sql = "INSERT INTO medicineinventory (Category, Code, MedicineName, Manufacture, Unit, Description, UnitPrice, SellPrice, Quantity, SKU, ExpiryDate) VALUES ('$category', '$code', '$medicineName', '$manufacture', '$unit', '$description', '$unitPrice', '$sellPrice', '$quantity', '$sku', '$expiryDate')";
+
+    if ($con->query($sql) === TRUE) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//getMedicineInventory
+function getMedicineInventory()
+{
+    $con = getConnection();
+    $sql = "SELECT * FROM medicineinventory";
+    $result = $con->query($sql);
+    return $result;
+}
 ?>
