@@ -85,12 +85,13 @@ if(!isset($_SESSION['isAdmin'])){
             text-decoration: none;
         }
     </style>
+    <script src="../Js/AddMedicine.js"></script>
 </head>
 <body>
     <h1>Medicine Inventory</h1>
     
     <!-- Add New Medicine Form -->
-    <form action="../../Controllers/AddMedicine.php" method="POST">
+    <form action="../../Controllers/AddMedicine.php" method="POST" onsubmit="return ValidAddMedicine()">
     <label for="category">Category:</label>
         <select id="category" name="category" >
         <option disabled="" selected="">--- SELECT ---</option>
@@ -151,6 +152,7 @@ if(!isset($_SESSION['isAdmin'])){
         <input type="date" id="expiry_date" name="expiry_date"><br><br>
         
         <input type="submit" value="Add Medicine">
+        <span id="error"></span>
     </form>
     
     <h2>All Medicine List</h2>

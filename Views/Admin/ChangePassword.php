@@ -66,10 +66,12 @@ input[type="password"] {
 }
 
     </style>
+
+<script src="../Js/ChangePassword.js"></script>
 </head>
 <body>
 <div class="container">
-        <form action="../../Controllers/ChangePasswordController.php" method="post">
+        <form action="../../Controllers/ChangePasswordController.php" method="post" onsubmit="return ValidChangePassword()">
             <fieldset>
                 <legend>Change Password</legend>
                 <div class="form-group">
@@ -85,6 +87,7 @@ input[type="password"] {
                     <input type="password" id="confirmPassword" name="confirmPassword">
                 </div>
                 <input type="submit" value="Change Password" class="form-submit">
+                <span id="error"></span>
             </fieldset>
         </form>
     </div>

@@ -113,10 +113,12 @@ if(!isset($_SESSION['isAdmin'])){
             text-decoration: underline;
         }
     </style>
+
+<script src="../Js/OnBoardDoctor.js"></script>
 </head>
 <body>
     <div class="container">
-        <form action="../../Controllers/OnBoardDoctor.php" method="POST">
+        <form action="../../Controllers/OnBoardDoctor.php" method="POST" onsubmit="return ValidRegisterDoctor()">
             <fieldset>
                 <legend>Doctor Registration</legend>
                 <label for="fullName">Full Name:</label><br>
@@ -150,7 +152,10 @@ if(!isset($_SESSION['isAdmin'])){
                 <label for="speciality">Speciality:</label><br>
                 <input type="text" id="speciality" name="speciality"><br>
 
-                <input type="submit" value="Register">
+                <input type="submit" value="Register" >
+
+                <span id="error"></span>
+
             </fieldset>
         </form>
 

@@ -12,11 +12,12 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forget Password</title>
     <link rel="stylesheet" href="ForgetPassword.css">
+    <script src="../Js/ForgetPassword.js"></script>
 </head>
 <body>
 <div class="container">
         <h2>Forget Password</h2>
-        <form action="../../Controllers/ForgetPassword.php" method="POST" novalidate>
+        <form action="../../Controllers/ForgetPassword.php" method="POST" onsubmit=" return ValidateForgetPassword()" novalidate>
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username">

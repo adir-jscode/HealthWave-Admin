@@ -22,7 +22,7 @@ if(isset($_SESSION['Id']) && isset($_POST['currentPassword']) && isset($_POST['n
     $result = ChangePassword($id, $newPassword);
     
     if($result > 0){
-        header("Location: ../Views/Admin/User.php");
+        header("Location: ../Views/Admin/Dashboard.php");
     }else{
         echo "Error";
     }
