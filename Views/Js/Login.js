@@ -25,7 +25,7 @@ function ValidateLogin() {
         error.innerHTML = "";
     }
 
-    if (username == "" || password == "") {
+    if (username == "" && password == "") {
         flag = false;
         error.innerHTML = "Please fill all fields";
         error.style.color = "red";

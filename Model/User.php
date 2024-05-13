@@ -186,4 +186,17 @@ function getMedicineInventory()
     $result = $con->query($sql);
     return $result;
 }
+
+
+
+
+//AddLabAssistantRecord using prepared statement
+function AddLabAssistantRecord($FullName, $Gender, $ContactNo, $Email, $Password, $Username, $Address)
+{
+    $con = getConnection();
+    $stmt = $con->prepare("INSERT INTO labassistant (FullName, Gender, ContactNo, Email, Password, Username, Address) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssss", $FullName, $Gender, $ContactNo, $Email, $Password, $Username, $Address);
+    $stmt->execute();
+    return $stmt->affected_rows;
+}
 ?>
