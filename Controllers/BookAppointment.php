@@ -63,12 +63,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
     
     
-    header('Location: ../Views/Patient/BookAppointment.php');
+    header('Location: ../Views/Admin/ManageAppointment.php');
     exit();
 } 
 else {
     $_SESSION['errorMessage'] = "Invalid Request!";
-    header('Location: ../Views/Patient/BookAppointment.php');
+    header('Location: ../Views/Admin/ManageAppointment.php');
     exit();
 }
 ?>

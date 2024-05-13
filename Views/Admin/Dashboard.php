@@ -80,7 +80,9 @@ h1 {
             <li><a href="Profile.php">Profile</a></li>
             <li><a href="ChangePassword.php">Change Password</a></li>
             <li><a href="OnBoardDoctor.php">Onboard Doctor</a></li>
+            <li><a href="ManageAppointment.php">Appointments</a></li>
             <li><a href="MedicineInventory.php">Medicine Inventory</a></li>
+            <li><a href="OnboardLabAssistant.php">Add New Lab Assistant</a></li>
             <li><a href="../../Controllers/Logout.php">Logout</a></li>
         </ul>
     </div>
